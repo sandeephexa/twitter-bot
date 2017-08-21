@@ -5,7 +5,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const apiai = require("apiai");
 const APIAII = apiai('2117802d445d4576bcf2ca717e95a09a');
-const fs = require("fs");
+//const fs = require("fs");
 let weatherfunc = require('./weatherfunction');
 
 // var uploadMedia = require("./uploadimage");
