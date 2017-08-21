@@ -8,7 +8,7 @@ var APIAII = apiai('2117802d445d4576bcf2ca717e95a09a');
 var Twitter = new twit(config);
 var fs = require("fs");
 var botfunction = require('./weatherfunction');
-var uploadMedia = require("./uploadpic");
+//var uploadMedia = require("./uploadpic");
 var stream = Twitter.stream("user", { stringify_friend_ids: true });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
