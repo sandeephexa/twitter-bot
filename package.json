@@ -19,7 +19,8 @@
     "apiai": "^4.0.3",
     "twit": "^2.2.9",
     "express"  : "^4.15.4",
-    "body-parser" : "1.17.2"
+    "body-parser" : "1.17.2",
+    "fs" : "0.0.1"
   },
   "devDependencies": {},
   "description": ""
