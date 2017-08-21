@@ -34,7 +34,7 @@ stream.on("direct_message", (directMsg) => {
 
     //fs.writeFileSync("./app.json", JSON.stringify(directMsg), "utf-8");
     if (text) {
-        let request = APIAII.textRequest(text, {
+        let request = APIAII.textRequest(text, { 
             sessionId: 'SessionBot'
         });
         request.on('response', (response) => {
