@@ -30,7 +30,7 @@ stream.on('direct_message', function (directMsg) {
             let result = response;
            
             if (text == "hi") {
-                var image_media = JSON.parse(uploadMedia.TwitterUpload());
+               // var image_media = JSON.parse(uploadMedia.TwitterUpload());
                 paramssend = botfunction.WelcomeParams(sender_id, screen_name);
                 Twitter.post("direct_messages/events/new", paramssend, function (err, data, response) {
                     stream.stop();
