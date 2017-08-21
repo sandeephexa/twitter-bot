@@ -1,4 +1,4 @@
-exports.WelcomeParams = function (sender_id) {
+exports.WelcomeParams = function (sender_id,screen_name) {
     return {
         "event": {
             "type": "message_create",
