@@ -5,18 +5,17 @@ exports.WelcomeParams = function (sender_id, screen_name) {
             "message_create": {
                 "target": {
                     "recipient_id": sender_id
-                },
-                "message_data": {
-                    "text": "Hi," + screen_name + "\n\nWelcome to weather forecast !!!\n\n",
-
-                    "attachment": {
-                        "type": "media",
-                        "media": {
-                            "id": media_id
-                        }
+                }, "message_data": {
+                    "text": "Hi," + screen_name + "\n\nWelcome to our Textile Company!!!\n\nPlease Select the Category",
+                    "quick_reply": {
+                        "type": "options"
+                     
                     }
+                  
                 }
             }
         }
     }
 }
+
+
