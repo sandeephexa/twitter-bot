@@ -28,7 +28,7 @@ stream.on("direct_message", (directMsg) => {
     let directMessage = directMsg.direct_message;
     let sender_id = directms.sender_id_str;
     let screenName = directMessage.sender.name;
-    let txt = directMessage.text;
+    let text = directMessage.text;
     console.log(sender_id);
     console.log(screen_name);
 
