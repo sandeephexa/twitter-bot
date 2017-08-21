@@ -4,12 +4,11 @@ var bodyParser=require('body-parser');
 var app = express();
 var config = require('./config');
 var apiai = require('apiai');
-var APIAII = apiai('2117802d445d4576bcf2ca717e95a09a ');
+var APIAII = apiai('2117802d445d4576bcf2ca717e95a09a');
 var Twitter = new twit(config);
-
+var fs = require("fs");
 var botfunction = require('./weatherfunction');
-
-
+var uploadMedia = require("./uploadpic");
 var stream = Twitter.stream("user", { stringify_friend_ids: true });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,11 +18,13 @@ stream.on('direct_message', function (directMsg) {
     var screen_name = directms.sender.name;
     var text = directms.text;
     var paramssend;
-    
-   
+    console.log("Text is "+text);
+    //console.log(JSON.stringify(directms.sender));
+    //console.log(JSON.stringify(directMsg));
+    fs.writeFileSync("./data.json", JSON.stringify(directMsg), "utf8");
     if (text) {
         var request = APIAII.textRequest(text, {
-            sessionId: 'APIAISESSIDD'
+            sessionId: 'APIAISESSID'
         });
         request.on('response', function (response) {
             let responseQuery = response.result.resolvedQuery;
@@ -31,21 +32,19 @@ stream.on('direct_message', function (directMsg) {
             // console.log(response.result);
             //console.log(text + "= >" + responseQuery);
             if (text == "hi") {
-               // mens='', womens='', categories='', menstypes='', sizes='';
-               // var image_media = JSON.parse(uploadMedia.TwitterUpload());
-                paramssend = botfunction.WelcomeParams(sender_id, screen_name);
+                var image_media = JSON.parse(uploadMedia.TwitterUpload());
+                paramssend = botfunction.WelcomeParams(sender_id, screen_name, image_media.media_id_string);
                 Twitter.post("direct_messages/events/new", paramssend, function (err, data, response) {
                     stream.stop();
                     stream.start();
                 })
             }
             
-            
-             
-            
-               
-           
         });
+           
+      
+            
+          
         request.on('error', function (error) {
             //        console.log(error);
         });
@@ -60,3 +59,4 @@ app.get("/",function(req,res){
 app.listen(process.env.PORT || 3000, function (message) {
     console.log("Server is running on the port...");
 })
+
