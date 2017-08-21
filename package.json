@@ -1,18 +1,18 @@
 {
-	  "name": "twitter-bot",
-	  "version": "1.0.0",
-	  "description": "twitter bot",
-	  "main": "index.js",
-	  "scripts": {
-	    "start": "node index.js",
-	    "test": "echo \"Error: no test specified\" && exit 1"
-	  },
-	  "author": "sandeep",
-	  "license": "ISC",
-	  "dependencies": {
-	    "apiai": "^4.0.3",
-	    "body-parser": "^1.17.2",
-	    "express": "^4.15.4",
-	    "twit": "^2.2.9"
-	  }
-	}
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "Twitter bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "author": "Srinivasan V",
+  "license": "ISC",
+  "dependencies": {
+    "apiai": "^4.0.3",
+    "twit": "^2.2.9",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4"
+  }
+}
