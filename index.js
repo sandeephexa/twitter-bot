@@ -20,7 +20,7 @@ stream.on('direct_message', function (directMsg) {
     var paramssend;
     console.log("Text is "+text);
    
-    fs.writeFileSync("./data.json", JSON.stringify(directMsg), "utf8");
+    //fs.writeFileSync("./data.json", JSON.stringify(directMsg), "utf8");
     if (text) {
         var request = APIAII.textRequest(text, {
             sessionId: 'APIAISESSID'
