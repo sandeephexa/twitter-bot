@@ -6,7 +6,7 @@ var config = require('./config');
 var apiai = require('apiai');
 var APIAII = apiai('2117802d445d4576bcf2ca717e95a09a');
 var Twitter = new twit(config);
-var fs = require("fs");
+//var fs = require("fs");
 var botfunction = require('./weatherfunction');
 
 var stream = Twitter.stream("user", { stringify_friend_ids: true });
