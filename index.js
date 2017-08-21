@@ -8,7 +8,7 @@ var APIAII = apiai('2117802d445d4576bcf2ca717e95a09a');
 var Twitter = new twit(config);
 var fs = require("fs");
 var botfunction = require('./weatherfunction');
-//var uploadMedia = require("./uploadpic");
+
 var stream = Twitter.stream("user", { stringify_friend_ids: true });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,8 +19,7 @@ stream.on('direct_message', function (directMsg) {
     var text = directms.text;
     var paramssend;
     console.log("Text is "+text);
-    //console.log(JSON.stringify(directms.sender));
-    //console.log(JSON.stringify(directMsg));
+   
     fs.writeFileSync("./data.json", JSON.stringify(directMsg), "utf8");
     if (text) {
         var request = APIAII.textRequest(text, {
@@ -29,8 +28,7 @@ stream.on('direct_message', function (directMsg) {
         request.on('response', function (response) {
             let responseQuery = response.result.resolvedQuery;
             let result = response;
-            // console.log(response.result);
-            //console.log(text + "= >" + responseQuery);
+           
             if (text == "hi") {
                 var image_media = JSON.parse(uploadMedia.TwitterUpload());
                 paramssend = botfunction.WelcomeParams(sender_id, screen_name);
