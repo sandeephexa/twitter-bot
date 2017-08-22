@@ -25,7 +25,7 @@ stream.on('direct_message', function (directMsg) {
     //fs.writeFileSync("./data.json", JSON.stringify(directMsg), "utf8");
     if (text) {
         var request = APIAII.textRequest(text, {
-            sessionId: 'APIAISESSID'
+            sessionId: 'APIAISESSIDSSS'
         });
         request.on('response', function (response) {
             let responseQuery = response.result.resolvedQuery;
