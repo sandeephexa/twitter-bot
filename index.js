@@ -37,8 +37,8 @@ stream.on('direct_message', function (directMsg) {
                 //var image_media = JSON.parse(uploadMedia.TwitterUpload());
                 paramssend = botfunction.WelcomeParams(sender_id, screen_name);
                 Twitter.post("direct_messages/events/new", paramssend, function (err, data, response) {
-                    stream.stop();
-                    stream.start();
+                    //stream.stop();
+                   // stream.start();
                 })
             }
             // else if (text == "Mens") {
@@ -118,11 +118,7 @@ stream.on('direct_message', function (directMsg) {
             //         stream.start();
             //     })
             // }
-            else 
-            {
-             stream.stop();
-             stream.start();    
-            }
+           
         });
         request.on('error', function (error) {
             //        console.log(error);
